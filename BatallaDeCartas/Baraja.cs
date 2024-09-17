@@ -17,11 +17,11 @@ namespace BatallaDeCartas
 
         public void CrearBaraja() 
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 1; i < 5; i++)
             {
-                for (int j = 0; j < 12; j++)
+                for (int j = 1; j < 13; j++)
                 {
-                    Carta carta = new Carta(j, i);
+                    Carta carta = new Carta(j , i);
                     cartas.Add(carta);
                 }
             }

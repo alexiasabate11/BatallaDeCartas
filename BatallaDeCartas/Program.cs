@@ -16,10 +16,18 @@ namespace BatallaDeCartas
 
         static void Main(string[] args)
         {
+            Console.WriteLine("BATALLA DE CARTAS");
+            int numeroJugadores = NumeroJugadores();
+            int numeroCartasJugador;
+            if (cartas.Count() % numeroJugadores == 0)
+                numeroCartasJugador = cartas.Count() / numeroJugadores;
+            else
+                numeroCartasJugador = (cartas.Count() - (cartas.Count() % numeroJugadores)) / numeroJugadores;
 
+            cartas = Barajar(cartas);
         }
 
-        static void RobarCarta()
+        static void RobarCarta() 
         {
             carta = cartas.First();
             Console.WriteLine(carta);
@@ -55,6 +63,13 @@ namespace BatallaDeCartas
             cartas.Remove(carta);
 
             return carta;
+        }
+
+        static int NumeroJugadores()
+        {
+            Console.WriteLine("Cuantos jugadores sois? ");
+            Int32.TryParse(Console.ReadLine(), out int numeroJugadores);
+            return numeroJugadores;
         }
     }
 }

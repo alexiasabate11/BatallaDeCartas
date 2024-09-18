@@ -8,23 +8,25 @@ namespace BatallaDeCartas
 {
     internal class Baraja
     {
-        List<Carta> cartas = new List<Carta>();
+        List<Carta> cartas;
 
-        public Baraja() 
+        public Baraja()
         {
-            CrearBaraja();
+            cartas = new List<Carta>();
+            CrearBaraja(); // Llenar la baraja con cartas al instanciar la clase
         }
 
-        public void CrearBaraja() 
+        public List<Carta> CrearBaraja()
         {
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i <= 4; i++) 
             {
-                for (int j = 1; j < 13; j++)
+                for (int j = 1; j <= 12; j++)
                 {
-                    Carta carta = new Carta(j , i);
+                    Carta carta = new Carta(j, i);
                     cartas.Add(carta);
                 }
             }
+            return cartas;
         }
 
         public List<Carta> Cartas
@@ -33,4 +35,5 @@ namespace BatallaDeCartas
             set { this.cartas = value; }
         }
     }
+
 }
